@@ -1,0 +1,17 @@
+; Export-only shell project: the Godot 3.6.2 Android exporter builds the manifest and
+; the _cl_ command line from this, then tools/assemble_apk.py swaps in Brotato's pck files.
+config_version=4
+
+[application]
+
+config/name="Brotato"
+config/icon="res://brotato_icon.png"
+
+[display]
+
+window/handheld/orientation="sensor_landscape"
+
+[rendering]
+
+quality/driver/driver_name="GLES3"
+quality/driver/fallback_to_gles2=false

@@ -1,0 +1,15 @@
+# Signing key and its password stay on this machine (see HANDOFF.md: every update must be signed
+# with the same key, so keep a backup of signing/ somewhere safe).
+signing/
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Machine paths for the build scripts (template: tools/local.env.example)
+tools/local.env
+
+# The game's icon is the game's artwork: not published. Put a square PNG (512x512) at
+# shell/brotato_icon.png before exporting the shell.
+shell/brotato_icon.png
+shell/.import/brotato_icon.*

@@ -4,6 +4,8 @@
 
 <h1 align="center">Brotato for Android</h1>
 
+<p align="center"><b>中文</b> · <a href="README.en.md">English</a></p>
+
 <p align="center">
   Steam 上的《土豆兄弟》PC 版，原样跑在安卓上，存档、成就、DLC 和创意工坊都接 Steam。
 </p>
@@ -22,6 +24,14 @@
 Brotato 是 Godot 3 做的，pck 没有加密，脚本是普通的字节码。所以官方的 Godot 3.6.2 安卓模板直接就能跑它，游戏文件一个字节都不用改。真正要花功夫的是 Steam：PC 版靠 GodotSteam 和 Steam 客户端，安卓上两样都没有，只能自己用 [JavaSteam](https://github.com/Longi94/JavaSteam) 把需要的部分接回来。
 
 仓库里没有游戏内容。第一次打开时用你的 Steam 账号扫码登录，再从 Steam 下载游戏，账号得已经买了 Brotato。
+
+## 下载与安装
+
+从 [Releases](../../releases) 下载 **`Brotato-android-release.apk`**（约 22.5 MB，不含任何游戏本体资源）安装到安卓设备（64 位 `arm64-v8a`）：
+
+1. 首次打开用手机上的 **Steam 令牌扫码登录**（账号需在 Steam 拥有《土豆兄弟》），或选择导入自己从电脑拷过来的 `Brotato.pck`。
+2. 启动器会自动从 Steam 下载 `Brotato.pck`（281 MB）、同步云存档、校验已购 DLC 并拉取订阅的创意工坊模组。
+3. 之后每次点图标直接进游戏（约 4~6 秒），云存档和游玩状态在后台自动同步。
 
 ## 截图
 

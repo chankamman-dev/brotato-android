@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="440" viewBox="0 0 860 440" font-family="'Segoe UI',-apple-system,BlinkMacSystemFont,'Noto Sans',sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8a94a6"/>
+    </marker>
+  </defs>
+  <rect x="0.5" y="0.5" width="859" height="439" rx="14" fill="#ffffff" stroke="#e4e7ec"/>
+  <text x="28" y="40" font-size="16" font-weight="700" fill="#1f2328">No Game Assets in APK — Game &amp; Saves Come Directly from Steam</text>
+
+  <!-- Steam -->
+  <rect x="28" y="64" width="232" height="246" rx="12" fill="#f6f8fa" stroke="#d8dee6"/>
+  <rect x="28" y="64" width="232" height="40" rx="12" fill="#1b2838"/>
+  <rect x="28" y="92" width="232" height="12" fill="#1b2838"/>
+  <text x="46" y="90" font-size="14.5" font-weight="700" fill="#ffffff">Steam</text>
+  <g font-size="12.5" fill="#374151">
+    <text x="46" y="132">Game Depot 1942281</text>
+    <text x="58" y="150" font-size="11.5" fill="#6b7280">Fetches only Brotato.pck</text>
+    <text x="46" y="180">Steam Cloud Saves</text>
+    <text x="46" y="210">Achievements, Playtime, Presence</text>
+    <text x="46" y="240">DLC Ownership</text>
+    <text x="46" y="270">Workshop Subscriptions</text>
+  </g>
+
+  <!-- Launcher / bridge -->
+  <rect x="314" y="64" width="232" height="246" rx="12" fill="#f6f8fa" stroke="#d8dee6"/>
+  <rect x="314" y="64" width="232" height="40" rx="12" fill="#2f8cff"/>
+  <rect x="314" y="92" width="232" height="12" fill="#2f8cff"/>
+  <text x="332" y="90" font-size="14.5" font-weight="700" fill="#ffffff">Launcher &amp; Steam Bridge (Java)</text>
+  <g font-size="12.5" fill="#374151">
+    <text x="332" y="132">Downloads pck &amp; chunk delta updates</text>
+    <text x="332" y="162">Two-way Steam Auto-Cloud sync</text>
+    <text x="332" y="192">Checks DLCs &amp; downloads mods</text>
+    <text x="332" y="222">In-game: playtime &amp; achievement sync</text>
+    <text x="332" y="252">Native achievement toast overlay</text>
+    <text x="332" y="282" font-size="11.5" fill="#6b7280">JavaSteam over WebSocket only</text>
+  </g>
+
+  <!-- Godot -->
+  <rect x="600" y="64" width="232" height="246" rx="12" fill="#f6f8fa" stroke="#d8dee6"/>
+  <rect x="600" y="64" width="232" height="40" rx="12" fill="#478cbf"/>
+  <rect x="600" y="92" width="232" height="12" fill="#478cbf"/>
+  <text x="618" y="90" font-size="14.5" font-weight="700" fill="#ffffff">Official Godot 3.6.2 Android</text>
+  <g font-size="12.5" fill="#374151">
+    <text x="618" y="132">--main-pack</text>
+    <text x="630" y="150" font-size="11.5" fill="#6b7280">user://game/Brotato.pck</text>
+    <text x="618" y="180">override.cfg swaps in boot.gd</text>
+    <text x="618" y="210">boot.gd mounts overlay.zip</text>
+    <text x="630" y="228" font-size="11.5" fill="#6b7280">Android steam.gd replaces PC stub</text>
+    <text x="618" y="258">ModLoader reads user://workshop</text>
+    <text x="618" y="288">"Steam" singleton talks to Java bridge</text>
+  </g>
+
+  <!-- arrows between columns -->
+  <line x1="264" y1="168" x2="310" y2="168" stroke="#8a94a6" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)"/>
+  <line x1="550" y1="168" x2="596" y2="168" stroke="#8a94a6" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)"/>
+
+  <!-- device storage -->
+  <rect x="28" y="352" width="804" height="62" rx="12" fill="#fff7ed" stroke="#f5c48f"/>
+  <text x="46" y="378" font-size="13.5" font-weight="700" fill="#9a4b05">On-Device Storage (files/)</text>
+  <text x="46" y="400" font-size="12.5" fill="#7c4a12">game/Brotato.pck (header patched to 3.6) · &lt;SteamID64&gt;/ saves (same layout as PC) · workshop/ mods · achievement icon cache</text>
+  <line x1="430" y1="312" x2="430" y2="348" stroke="#8a94a6" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="716" y1="348" x2="716" y2="314" stroke="#8a94a6" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="438" y="336" font-size="11" fill="#6b7280">Write</text>
+  <text x="724" y="336" font-size="11" fill="#6b7280">Read</text>
+</svg>

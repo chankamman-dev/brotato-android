@@ -1,65 +1,88 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="440" viewBox="0 0 860 440" font-family="'Microsoft YaHei','PingFang SC','Noto Sans SC','Segoe UI',sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="450" viewBox="0 0 880 450" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei','PingFang SC',sans-serif">
   <defs>
-    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 L10 5 L0 10 z" fill="#8a94a6"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14171f"/>
+      <stop offset="100%" stop-color="#1b202b"/>
+    </linearGradient>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9 z" fill="#58a6ff"/>
+    </marker>
+    <marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9 z" fill="#ff9e44"/>
     </marker>
   </defs>
-  <rect x="0.5" y="0.5" width="859" height="439" rx="14" fill="#ffffff" stroke="#e4e7ec"/>
-  <text x="28" y="40" font-size="16" font-weight="700" fill="#1f2328">安装包里没有游戏，游戏和存档都从 Steam 来</text>
 
-  <!-- Steam -->
-  <rect x="28" y="64" width="232" height="246" rx="12" fill="#f6f8fa" stroke="#d8dee6"/>
-  <rect x="28" y="64" width="232" height="40" rx="12" fill="#1b2838"/>
-  <rect x="28" y="92" width="232" height="12" fill="#1b2838"/>
-  <text x="46" y="90" font-size="14.5" font-weight="700" fill="#ffffff">Steam</text>
-  <g font-size="12.5" fill="#374151">
-    <text x="46" y="132">游戏仓库 depot 1942281</text>
-    <text x="58" y="150" font-size="11.5" fill="#6b7280">只取其中的 Brotato.pck</text>
-    <text x="46" y="180">Steam Cloud 存档</text>
-    <text x="46" y="210">成就、时长、在线状态</text>
-    <text x="46" y="240">DLC 所有权</text>
-    <text x="46" y="270">创意工坊订阅</text>
+  <rect width="880" height="450" rx="16" fill="url(#bg)" stroke="#2e3545" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <rect x="32" y="24" width="6" height="32" rx="3" fill="#2f8cff"/>
+  <text x="50" y="46" font-size="18" font-weight="800" fill="#f3f5f8">APK 不内置任何游戏文件 —— 游戏本体、云存档与创意工坊全部直连 Steam</text>
+
+  <!-- Column 1: Steam Servers -->
+  <rect x="32" y="72" width="242" height="252" rx="12" fill="#1c212c" stroke="#343d4f" stroke-width="1.2"/>
+  <rect x="32" y="72" width="242" height="42" rx="12" fill="#233247"/>
+  <text x="50" y="98" font-size="14.5" font-weight="800" fill="#79c0ff">☁️ Steam 官方服务器</text>
+  <g font-size="12.5" fill="#d5dce8">
+    <rect x="48" y="126" width="210" height="42" rx="6" fill="#151922" stroke="#2a3140"/>
+    <text x="58" y="144" font-weight="700" fill="#9ecbff">游戏仓库 Depot 1942281</text>
+    <text x="58" y="160" font-size="11" fill="#8b96ab">只拉取 Brotato.pck (跳过 exe/dll)</text>
+
+    <rect x="48" y="176" width="210" height="28" rx="6" fill="#151922" stroke="#2a3140"/>
+    <text x="58" y="194">Steam Cloud 云存档服务</text>
+
+    <rect x="48" y="212" width="210" height="28" rx="6" fill="#151922" stroke="#2a3140"/>
+    <text x="58" y="230">成就 Schema · 时长 · 在线状态</text>
+
+    <rect x="48" y="248" width="210" height="28" rx="6" fill="#151922" stroke="#2a3140"/>
+    <text x="58" y="266">DLC 所有权 (2868390 / 4498220)</text>
+
+    <rect x="48" y="284" width="210" height="28" rx="6" fill="#151922" stroke="#2a3140"/>
+    <text x="58" y="302">创意工坊已订阅模组列表</text>
   </g>
 
-  <!-- Launcher / bridge -->
-  <rect x="314" y="64" width="232" height="246" rx="12" fill="#f6f8fa" stroke="#d8dee6"/>
-  <rect x="314" y="64" width="232" height="40" rx="12" fill="#2f8cff"/>
-  <rect x="314" y="92" width="232" height="12" fill="#2f8cff"/>
-  <text x="332" y="90" font-size="14.5" font-weight="700" fill="#ffffff">启动页和 Steam 桥（Java）</text>
-  <g font-size="12.5" fill="#374151">
-    <text x="332" y="132">下载 pck，之后按块增量更新</text>
-    <text x="332" y="162">云存档双向同步</text>
-    <text x="332" y="192">确认 DLC，下载订阅的模组</text>
-    <text x="332" y="222">游戏里：时长、成就上报</text>
-    <text x="332" y="252">成就解锁提示</text>
-    <text x="332" y="282" font-size="11.5" fill="#6b7280">JavaSteam，只走 WebSocket</text>
+  <!-- Column 2: JavaSteam Bridge -->
+  <rect x="319" y="72" width="242" height="252" rx="12" fill="#1c212c" stroke="#2f8cff" stroke-width="1.5"/>
+  <rect x="319" y="72" width="242" height="42" rx="12" fill="#1f4782"/>
+  <text x="337" y="98" font-size="14.5" font-weight="800" fill="#ffffff">⚡ 启动器与 Steam 桥 (Java)</text>
+  <g font-size="12.5" fill="#d5dce8">
+    <text x="337" y="138" fill="#79c0ff" font-weight="700">• 下载 pck + 按块增量更新</text>
+    <text x="337" y="166">• 云存档双向 Auto-Cloud 同步</text>
+    <text x="337" y="194">• 校验已购 DLC 并拉取工坊模组</text>
+    <text x="337" y="222">• 实时上报游戏时长与解锁成就</text>
+    <text x="337" y="250">• 右下角原生 Steam 成就弹窗</text>
+    <rect x="335" y="270" width="210" height="38" rx="6" fill="#151922" stroke="#2c3a50"/>
+    <text x="440" y="287" text-anchor="middle" font-size="11.5" font-weight="700" fill="#68f0b1">JavaSteam · 强制 WebSocket</text>
+    <text x="440" y="302" text-anchor="middle" font-size="10.5" fill="#8b96ab">按域名路由，稳定穿透 Clash TUN</text>
   </g>
 
-  <!-- Godot -->
-  <rect x="600" y="64" width="232" height="246" rx="12" fill="#f6f8fa" stroke="#d8dee6"/>
-  <rect x="600" y="64" width="232" height="40" rx="12" fill="#478cbf"/>
-  <rect x="600" y="92" width="232" height="12" fill="#478cbf"/>
-  <text x="618" y="90" font-size="14.5" font-weight="700" fill="#ffffff">Godot 3.6.2 官方安卓模板</text>
-  <g font-size="12.5" fill="#374151">
-    <text x="618" y="132">--main-pack</text>
-    <text x="630" y="150" font-size="11.5" fill="#6b7280">user://game/Brotato.pck</text>
-    <text x="618" y="180">override.cfg 换上 boot.gd</text>
-    <text x="618" y="210">boot.gd 挂上 overlay.zip</text>
-    <text x="630" y="228" font-size="11.5" fill="#6b7280">安卓版 steam.gd 替换原版</text>
-    <text x="618" y="258">ModLoader 读 user://workshop</text>
-    <text x="618" y="288">“Steam”插件连到 Java 桥</text>
+  <!-- Column 3: Godot 3.6.2 -->
+  <rect x="606" y="72" width="242" height="252" rx="12" fill="#1c212c" stroke="#3b7bb5" stroke-width="1.2"/>
+  <rect x="606" y="72" width="242" height="42" rx="12" fill="#23486b"/>
+  <text x="624" y="98" font-size="14.5" font-weight="800" fill="#a2d2ff">🎮 Godot 3.6.2 官方安卓模板</text>
+  <g font-size="12.5" fill="#d5dce8">
+    <rect x="622" y="126" width="210" height="40" rx="6" fill="#151922" stroke="#2a3140"/>
+    <text x="632" y="143" font-family="Consolas,monospace" font-size="11.5" fill="#ffb067">--main-pack</text>
+    <text x="632" y="159" font-family="Consolas,monospace" font-size="11" fill="#8b96ab">user://game/Brotato.pck</text>
+
+    <text x="624" y="188">• <tspan fill="#79c0ff">override.cfg</tspan> 接管首个自动加载</text>
+    <text x="624" y="214">• <tspan fill="#79c0ff">boot.gd</tspan> 挂载 overlay.zip</text>
+    <text x="636" y="232" font-size="11" fill="#8b96ab">安卓版 steam.gd 零侵入替换原版</text>
+    <text x="624" y="256">• ModLoader 指向 <tspan font-family="Consolas,monospace" font-size="11.5">user://workshop</tspan></text>
+    <text x="624" y="282">• 渲染线程零阻塞读取 Java 缓存</text>
   </g>
 
-  <!-- arrows between columns -->
-  <line x1="264" y1="168" x2="310" y2="168" stroke="#8a94a6" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)"/>
-  <line x1="550" y1="168" x2="596" y2="168" stroke="#8a94a6" stroke-width="1.6" marker-start="url(#a)" marker-end="url(#a)"/>
+  <!-- Horizontal Arrows -->
+  <line x1="278" y1="196" x2="314" y2="196" stroke="#58a6ff" stroke-width="2" marker-start="url(#a)" marker-end="url(#a)"/>
+  <line x1="565" y1="196" x2="601" y2="196" stroke="#58a6ff" stroke-width="2" marker-start="url(#a)" marker-end="url(#a)"/>
 
-  <!-- device storage -->
-  <rect x="28" y="352" width="804" height="62" rx="12" fill="#fff7ed" stroke="#f5c48f"/>
-  <text x="46" y="378" font-size="13.5" font-weight="700" fill="#9a4b05">设备上的 files/</text>
-  <text x="46" y="400" font-size="12.5" fill="#7c4a12">game/Brotato.pck（版本头改成 3.6） · &lt;SteamID64&gt;/ 存档，和 PC 同路径 · workshop/ 模组 · 成就名称和图标缓存</text>
-  <line x1="430" y1="312" x2="430" y2="348" stroke="#8a94a6" stroke-width="1.6" marker-end="url(#a)"/>
-  <line x1="716" y1="348" x2="716" y2="314" stroke="#8a94a6" stroke-width="1.6" marker-end="url(#a)"/>
-  <text x="438" y="336" font-size="11" fill="#6b7280">写入</text>
-  <text x="724" y="336" font-size="11" fill="#6b7280">读取</text>
+  <!-- Bottom Storage Box -->
+  <rect x="32" y="358" width="816" height="68" rx="12" fill="#231d18" stroke="#7d5329" stroke-width="1.2"/>
+  <text x="50" y="384" font-size="13.5" font-weight="800" fill="#ffad5c">📁 设备沙盒目录 user:// (/data/data/dev.kmbrotato.brotato/files/)</text>
+  <text x="50" y="408" font-size="12.5" fill="#dfb995">game/Brotato.pck（文件头 8 字节改写为 3.6） · &lt;SteamID64&gt;/ 存档（与 PC 同路径结构） · workshop/ 模组 · 成就图标与元数据缓存</text>
+
+  <!-- Vertical Storage Arrows -->
+  <line x1="440" y1="326" x2="440" y2="354" stroke="#ff9e44" stroke-width="1.8" marker-end="url(#a2)"/>
+  <line x1="727" y1="354" x2="727" y2="326" stroke="#ff9e44" stroke-width="1.8" marker-end="url(#a2)"/>
+  <text x="448" y="345" font-size="11.5" font-weight="600" fill="#ffad5c">写入 / 同步</text>
+  <text x="735" y="345" font-size="11.5" font-weight="600" fill="#ffad5c">原生 C 直读</text>
 </svg>
